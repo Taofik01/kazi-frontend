@@ -3,7 +3,7 @@
 
 export default function StartConversation() {
   return (
-    <section className="w-full bg-white py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-[#faf5f5] py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-tight px-4">

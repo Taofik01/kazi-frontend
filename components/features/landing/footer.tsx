@@ -5,7 +5,7 @@ import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white">
+    <footer className="w-full bg-[#eeeeee]">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16">
@@ -152,22 +152,30 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="mt-10 sm:mt-12 lg:mt-16 pt-8 sm:pt-10 border-t border-gray-200">
-          <div className="flex flex-end border-amber-700  sm:flex-row items-end sm:items-center gap-120 sm:gap-6 lg:gap-10">
-            <label htmlFor="email" className="text-base sm:text-lg font-semibold text-gray-900 whitespace-nowrap">
-              Subscribe
-            </label>
-            <div className="w-full sm:flex-1 max-w-md">
-              <input
-                type="email"
-                id="email"
-                placeholder="youremail@gmail.com"
-                className="w-full px-4 sm:px-5 py-3 sm:py-3.5 border border-gray-300 rounded-lg text-sm sm:text-base text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
-              />
-            </div>
-          </div>
-        </div>
+<div className="mt-10 mb-10 sm:mt-12 lg:mt-16 pt-8 sm:pt-10 border-t border-gray-200">
+  
+  {/* 🌟 NEW WRAPPER: Limits the width and uses ml-auto to push it right */}
+  <div className="max-w-2xl ml-auto"> 
+    
+    {/* This inner flex container keeps the label and input side-by-side */}
+    <div className="flex items-center gap-4 sm:gap-6 lg:gap-10">
+      
+      <label htmlFor="email" className="text-base sm:text-lg font-semibold text-gray-900 whitespace-nowrap">
+        Subscribe
+      </label>
+      
+      {/* The input container expands to fill the remaining space in the max-w-2xl wrapper */}
+      <div className="w-full"> 
+        <input
+          type="email"
+          id="email"
+          placeholder="youremail@gmail.com"
+          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 border border-gray-300 rounded-lg text-sm sm:text-base text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+        />
       </div>
+    </div>
+  </div>
+</div>
 
       {/* Bottom Bar with Separator Line */}
       <div className="border-t border-gray-200">
@@ -192,6 +200,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );

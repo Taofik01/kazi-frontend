@@ -23,19 +23,8 @@ export default function UnlockPossibilitiesCTA() {
   ];
 
   return (
-    <section className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Background Image Container - CRITICAL: Must have explicit height */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/images/backgroud_image.png"
-          alt=""
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto">
+    <section className="relative  w-full py-16 sm:py-20  lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)),url('/images/background_image.png')] bg-cover bg-center ">
+      <div className="relative max-w-7xl mx-auto mb-10 sm:mb-16 lg:mb-20">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
@@ -74,7 +63,7 @@ export default function UnlockPossibilitiesCTA() {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center">
+        <div className="text-center mb-10">
           <button className="inline-flex items-center justify-center px-8 sm:px-10 lg:px-12 py-3.5 sm:py-4 lg:py-5 bg-gray-900 text-white text-base sm:text-lg font-semibold rounded-full hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
             Start Your Journey
           </button>

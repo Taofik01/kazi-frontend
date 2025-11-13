@@ -11,7 +11,7 @@ import Footer from "@/components/features/landing/footer";
 
 export default function Homepage() {
     return (
-        <main className="min-h-screen bg-white -mt-16">
+        <main className="min-h-screen w-full min-w-lvw bg-white -mt-16">
             <Navbar />
             {/* Hero Section */}
             <Hero />
