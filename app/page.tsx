@@ -11,26 +11,24 @@ import Footer from "@/components/features/landing/footer";
 
 export default function Homepage() {
     return (
-        <main className="min-h-screen w-full min-w-lvw bg-white -mt-16">
-            <Navbar />
-            {/* Hero Section */}
-            <Hero />
-            {/* How it works */}
-            <HowItWorks />
-            {/* Powerful Features */}
-            <PowerfulFeatures />
-            {/* Endless Possibilities */}
-            <EndlessPossibilities />
-            {/* Unlock Possibilities CTA */}
-            <UnlockPossibilitiesCTA />
-            {/* start conversation */}
-            <StartConversation />
-            {/* Footer */}
-            <Footer />
-
-
-
-
-        </main>
+        <div className="bg-white scroll-smooth overflow-x-hidden">
+            <main className="min-h-screen w-screen min-w-lvw bg-white -mt-16 overflow-x-clip">
+                <Navbar />
+                {/* Hero Section */}
+                <Hero />
+                {/* How it works */}
+                <HowItWorks />
+                {/* Powerful Features */}
+                <PowerfulFeatures />
+                {/* Endless Possibilities */}
+                <EndlessPossibilities />
+                {/* Unlock Possibilities CTA */}
+                <UnlockPossibilitiesCTA />
+                {/* start conversation */}
+                <StartConversation />
+                {/* Footer */}
+                <Footer />
+            </main>
+        </div>
     )
 }

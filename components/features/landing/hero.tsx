@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react"; 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -27,14 +28,14 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex items-center justify-center gap-2 px-6 sm:px-8 py-1 sm:py-2 rounded-xl bg-gray-900 text-white font-medium hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl">
+              <Link href='/auth/register' className="flex items-center justify-center gap-2 px-6 sm:px-8 py-1 sm:py-2 rounded-xl bg-gray-900 text-white font-medium hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl">
                 Get Started Now
                 <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="flex items-center justify-center gap-2 px-6 sm:px-8 py-1 sm:py-2 rounded-xl bg-white/50 backdrop-blur-md border border-gray-200 text-gray-900 font-medium hover:bg-white/70 transition-all shadow-sm">
+              </Link>
+              <Link href='' className="flex items-center justify-center gap-2 px-6 sm:px-8 py-1 sm:py-2 rounded-xl bg-white/50 backdrop-blur-md border border-gray-200 text-gray-900 font-medium hover:bg-white/70 transition-all shadow-sm">
                 Learn More
                 <ArrowRight className="w-5 h-5" />
-              </button>
+              </Link>
             </div>
           </div>
 

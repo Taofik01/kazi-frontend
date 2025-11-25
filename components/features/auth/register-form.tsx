@@ -242,34 +242,34 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit }) => {
             {passwordTouched && formData.password && (
               <div className="mt-3 space-y-1 text-xs">
                 <div className="flex items-center gap-2">
-                  <span className={passwordValidations.hasMinLength ? 'text-green-600' : 'text-gray-400'}>
-                    ✓
+                  <span className={passwordValidations.hasMinLength ? 'text-green-600' : 'text-red-600'}>
+                    {passwordValidations.hasMinLength ? '✓' : '✗'}
                   </span>
-                  <span className={passwordValidations.hasMinLength ? 'text-green-600' : 'text-gray-600'}>
+                  <span className={passwordValidations.hasMinLength ? 'text-green-600' : 'text-red-600'}>
                     At least 8 characters
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className={passwordValidations.hasUppercase ? 'text-green-600' : 'text-gray-400'}>
-                    ✓
+                  <span className={passwordValidations.hasUppercase ? 'text-green-600' : 'text-red-600'}>
+                    {passwordValidations.hasUppercase ? '✓' : '✗'}
                   </span>
-                  <span className={passwordValidations.hasUppercase ? 'text-green-600' : 'text-gray-600'}>
+                  <span className={passwordValidations.hasUppercase ? 'text-green-600' : 'text-red-600'}>
                     Includes one uppercase
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className={passwordValidations.hasNumber ? 'text-green-600' : 'text-gray-400'}>
-                    ✓
+                  <span className={passwordValidations.hasNumber ? 'text-green-600' : 'text-red-600'}>
+                    {passwordValidations.hasNumber ? '✓' : '✗'}
                   </span>
-                  <span className={passwordValidations.hasNumber ? 'text-green-600' : 'text-gray-600'}>
+                  <span className={passwordValidations.hasNumber ? 'text-green-600' : 'text-red-600'}>
                     Includes one number
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className={passwordValidations.hasSymbol ? 'text-green-600' : 'text-gray-400'}>
-                    ✓
+                  <span className={passwordValidations.hasSymbol ? 'text-green-600' : 'text-red-600'}>
+                    {passwordValidations.hasSymbol ? '✓' : '✗'}
                   </span>
-                  <span className={passwordValidations.hasSymbol ? 'text-green-600' : 'text-gray-600'}>
+                  <span className={passwordValidations.hasSymbol ? 'text-green-600' : 'text-red-600'}>
                     Includes one symbol
                   </span>
                 </div>
