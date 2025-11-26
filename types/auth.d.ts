@@ -10,6 +10,11 @@ export interface RegisterFormData {
   confirmPassword: string;
   agreeToTerms: boolean;
 }
+export interface SignInFormData {
+  email: string;
+  password: string;
+  rememberMe: boolean;
+}
 
 export interface VerifyEmailData {
   email: string;

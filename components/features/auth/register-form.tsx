@@ -1,26 +1,15 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
+import { useOnboarding } from '@/contexts/OnboardingContext';
+import { RegisterFormData, SignInFormData } from '@/types/auth';
+import Link from 'next/link';
 
-interface RegisterFormProps {
-  onSubmit?: (data: RegisterFormData) => Promise<void>;
-}
 
-interface RegisterFormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-  agreeToTerms: boolean;
-}
 
-interface SignInFormData {
-  email: string;
-  password: string;
-  rememberMe: boolean;
-}
 
-const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit }) => {
+const RegisterForm: React.FC = () => {
+  const { setStep, setEmail, setUserId } = useOnboarding();
+
   const [formData, setFormData] = useState<RegisterFormData>({
     firstName: '',
     lastName: '',
@@ -93,9 +82,19 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit }) => {
 
     setIsLoading(true);
     try {
-      if (onSubmit) {
-        await onSubmit(formData);
-      }
+      // Simulate API call for registration
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Mock API response with user ID
+      const mockUserId = 'user_' + Math.random().toString(36).substr(2, 9);
+      
+      // Store email and userId in context
+      setEmail(formData.email);
+      setUserId(mockUserId);
+
+      // Navigate to verification step
+      setStep('verify-code');
+      
     } catch (error) {
       console.error('Registration error:', error);
     } finally {
@@ -114,14 +113,17 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit }) => {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
       
-      // Example: Check credentials (replace with actual API call)
-      console.log('Sign in data:', signInData);
+      // Store user data
+      setEmail(signInData.email);
+
+      // Navigate to dashboard or next step
+      console.log('Sign in successful:', signInData);
+      // You can navigate to dashboard here
+      // router.push('/dashboard');
       
-      // If credentials are wrong, set error
-      // setSignInError('Wrong password!');
     } catch (error) {
       console.error('Sign in error:', error);
-      setSignInError('An error occurred. Please try again.');
+      setSignInError('Wrong password!');
     } finally {
       setIsLoading(false);
     }
@@ -357,7 +359,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit }) => {
               name="email"
               value={signInData.email}
               onChange={handleSignInChange}
-              placeholder="johndoe"
+              placeholder="johndoe@gmail.com"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
               disabled={isLoading}
             />
@@ -374,7 +376,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit }) => {
                 name="password"
                 value={signInData.password}
                 onChange={handleSignInChange}
-                placeholder="12344"
+                placeholder="Enter your password"
                 className={`w-full px-4 py-3 pr-12 border text-black rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition ${
                   signInError ? 'border-red-500' : 'border-gray-300'
                 }`}
@@ -412,9 +414,9 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit }) => {
                 Remember me
               </label>
             </div>
-            <a href="#" className="text-sm text-gray-900 hover:underline font-medium">
+            <Link href="/auth/resetPassword" className="text-sm text-gray-900 hover:underline font-medium">
               Forgot Password?
-            </a>
+            </Link>
           </div>
 
           {/* Submit Button */}

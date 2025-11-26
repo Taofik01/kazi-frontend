@@ -3,8 +3,17 @@
 
 export default function StartConversation() {
   return (
-    <section className="w-full bg-[#faf5f5] py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="relative w-full bg-[#ffffff] py-16 sm:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Radial gradient overlay - creates the deep center effect */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle at center, rgba(230, 220, 220, 0.6) 0%, transparent 60%)',
+        }}
+      />
+      
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-tight px-4">
           Let&apos;s start the conversation
