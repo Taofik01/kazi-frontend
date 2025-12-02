@@ -177,7 +177,7 @@ const RegisterForm: React.FC = () => {
               value={formData.firstName}
               onChange={handleInputChange}
               placeholder="John"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
+              className="w-full px-4 text-black py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
               disabled={isLoading}
             />
           </div>
@@ -193,7 +193,7 @@ const RegisterForm: React.FC = () => {
               value={formData.lastName}
               onChange={handleInputChange}
               placeholder="Doe"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
+              className="w-full px-4 text-black py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
               disabled={isLoading}
             />
           </div>
@@ -209,7 +209,7 @@ const RegisterForm: React.FC = () => {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="johndoe@gmail.com"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
+              className="w-full px-4 text-black py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
               disabled={isLoading}
             />
           </div>
@@ -360,7 +360,7 @@ const RegisterForm: React.FC = () => {
               value={signInData.email}
               onChange={handleSignInChange}
               placeholder="johndoe@gmail.com"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
+              className="w-full px-4 text-black py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
               disabled={isLoading}
             />
           </div>
